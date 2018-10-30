@@ -1,0 +1,15 @@
+<div class="col-12 col-md-4 hoverable">
+      <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ artist.song }}</mat-card-title>
+      <mat-card-subtitle>{{ artist.album }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="artist.image" alt="Artist Picture">
+    <mat-card-actions class="text-right">
+      <button mat-button (click)="doLike(artist)">
+        <mat-icon [ngClass]="{'love-like' : artist.like == true}"
+        class="love">favorite</mat-icon>
+      </button>
+    </mat-card-actions>
+    </mat-card>
+</div>

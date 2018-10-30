@@ -1,0 +1,9 @@
+<div class="row">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <input type="text" matInput (keyup)="onKeyUp($event)"
+      [(ngModel)]="searchValue" name="searchValue"
+      placeholder="Busca un artista" value="">
+    </mat-form-field>
+  </form>
+</div>

@@ -1,0 +1,9 @@
+<div *ngIf="artistList">
+  <div class="row center">
+        <app-artist-card [artist]="artist"
+        *ngFor="let artist of artistList"></app-artist-card>
+  </div>
+  <div *ngIf="artistList.length == 0" class="row center">
+        <p>Ningun artista coincide con tu búsqueda<p>
+  </div>
+</div>

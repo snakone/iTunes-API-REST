@@ -1,0 +1,29 @@
+@import '../../../../scss/vars';
+
+nav {
+  background: $nav-color;
+  position: fixed;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.navbar-brand {
+  margin-left: 1em;
+}
+
+.collapse, .navbar-collapse {
+  margin-top: $margin;
+  margin-bottom: $margin;
+  margin-left: $margin;
+}
+
+.loveme {
+  position: absolute;
+    right: 107px;
+    font-size: 1.7em;
+    top: 17px;
+    color: $heart-color;
+}

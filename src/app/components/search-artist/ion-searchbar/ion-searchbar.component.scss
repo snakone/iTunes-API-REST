@@ -1,0 +1,15 @@
+@import '../../../../scss/grid';
+
+.example-full-width {
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  width: 80%;
+}
+
+.mat-form-field {
+  text-align: center;
+  font-size: 1.2em;
+}

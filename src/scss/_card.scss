@@ -1,0 +1,14 @@
+@import './vars';
+
+.example-card {
+  width: 300px;
+  margin: 15px auto;
+}
+
+.love {
+  color:$heart-color;
+}
+
+.love-like {
+  color:red;
+}
