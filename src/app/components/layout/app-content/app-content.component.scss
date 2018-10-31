@@ -1,3 +1,11 @@
-.nav-margin {
-  margin-top: 5em;
+@import '../../../../scss/vars';
+
+.nav-margin {  // Fixed Top GAP
+  margin-top: $fixed-margin-small;
+}
+
+@media (min-width:992px) {
+  .nav-margin {
+    margin-top: $fixed-margin-large;
+  }
 }

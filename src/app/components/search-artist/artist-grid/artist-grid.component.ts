@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 
 import { ArtistService } from 'src/app/services/artist.service';
 import { Artist } from 'src/app/models/artist';
-import { debounceTime } from 'rxjs/operators';
 
+import { debounceTime } from 'rxjs/operators';  // Debounce Function
 
 @Component({
-  selector: 'app-artist-grid',
+  selector: 'artist-grid',
   templateUrl: './artist-grid.component.html',
   styleUrls: ['./artist-grid.component.scss']
 })
@@ -22,9 +22,9 @@ export class ArtistGridComponent implements OnInit {
     this.filterList();
   }
 
-  filterList(){
-    this.artistService.filteredData
-     .pipe(debounceTime(1500))
+  filterList():void {
+    this.artistService.filteredData  // Get the data from the Observable Stream
+     .pipe(debounceTime(1500))  // Debounce 1.5s
       .subscribe(res => {
       this.artistList = res as Artist[];
     });

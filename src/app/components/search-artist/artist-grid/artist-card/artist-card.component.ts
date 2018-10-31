@@ -1,11 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Artist } from 'src/app/models/artist';
 
-import { ToastrService } from 'ngx-toastr';
 import { ArtistService } from 'src/app/services/artist.service';
 
 @Component({
-  selector: 'app-artist-card',
+  selector: 'artist-card',
   templateUrl: './artist-card.component.html',
   styleUrls: ['./artist-card.component.scss']
 })
@@ -13,28 +12,16 @@ import { ArtistService } from 'src/app/services/artist.service';
 export class ArtistCardComponent implements OnInit {
 
   @Input() artist: Artist;
-  totalLikes: number = 0;
 
-  constructor(private toastr: ToastrService,
-              private artistService: ArtistService) { }
+  constructor(private artistService: ArtistService) { }
 
   ngOnInit() {
   }
 
-  doLike(artist: Artist){
+  doLike(artist: Artist):void {
+   // Swap Like value and check which value it's the new one
     this.artist.like = !this.artist.like;
-    this.checkLike(artist, this.artist.like);
-  }
-
-  checkLike(artist: Artist, like: boolean) {
-    if (like) {
-      this.toastr.success(`${artist.song}`, 'Canción añadida!');
-      this.artistService.totalLikes++
-    }
-    else {
-      this.toastr.error(`${artist.song}`, 'Canción eliminada!');
-        this.artistService.totalLikes--
-    }
+    this.artistService.checkLike(artist, this.artist.like);
   }
 
 }

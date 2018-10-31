@@ -1,6 +1,7 @@
 {
-  "name": "slash-test",
-  "version": "0.0.0",
+  "name": "itunes-api",
+  "author": "Sergi Martínez Pérez",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

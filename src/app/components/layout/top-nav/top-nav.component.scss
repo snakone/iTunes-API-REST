@@ -1,29 +1,44 @@
 @import '../../../../scss/vars';
+@import '../../../../scss/grid';
+@import '../../../../scss/hover';
 
 nav {
   background: $nav-color;
   position: fixed;
-  position: fixed;
   overflow: hidden;
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 999;  // Nav should have MORE z-index than Sticky Search Bar
+  margin-bottom: $margin;
 }
 
 .navbar-brand {
-  margin-left: 1em;
+  margin-left: $margin;
 }
 
-.collapse, .navbar-collapse {
+.collapse, .navbar-collapse {  // Expanded Nav Bar
   margin-top: $margin;
   margin-bottom: $margin;
   margin-left: $margin;
 }
 
-.loveme {
+.loveme {  // Heart Icon
   position: absolute;
-    right: 107px;
-    font-size: 1.7em;
-    top: 17px;
-    color: $heart-color;
+  right: 107px;
+  font-size: 1.7em;
+  top: 15px;
+  color: $heart-color;
+}
+
+.loveme:hover {  // Hover Mixin
+  @include hover();
+}
+
+@media (min-width:992px) {  // On Wider screen, move the the Heart Icon and make it a litte bigger
+  .loveme {
+    top: auto;
+    right: 50px;
+    font-size: 2em;
+    margin-top: -3px;
+  }
 }

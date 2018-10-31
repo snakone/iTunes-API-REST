@@ -1,9 +1,8 @@
-<div *ngIf="artistList">
+<div *ngIf="artistList">  <!-- If because it's Asynchronous -->
   <div class="row center">
-        <app-artist-card [artist]="artist"
-        *ngFor="let artist of artistList"></app-artist-card>
+    <artist-card *ngFor="let artist of artistList" [artist]="artist"></artist-card>
   </div>
-  <div *ngIf="artistList.length == 0" class="row center">
+  <div class="row center" *ngIf="artistList.length == 0">  <!-- Not Match! -->
         <p>Ningun artista coincide con tu búsqueda<p>
   </div>
 </div>

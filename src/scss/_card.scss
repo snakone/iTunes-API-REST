@@ -1,7 +1,8 @@
 @import './vars';
+@import './hover';
 
 .example-card {
-  width: 300px;
+  width: 290px;
   margin: 15px auto;
 }
 
@@ -11,4 +12,8 @@
 
 .love-like {
   color:red;
+}
+
+.love, .love-like:hover {
+  @include hover();
 }
