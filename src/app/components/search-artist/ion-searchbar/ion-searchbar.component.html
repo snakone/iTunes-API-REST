@@ -1,8 +1,8 @@
 <div class="row sticky">
-  <form class="example-form">
+  <form #searchForm="ngForm" class="example-form">
     <mat-form-field class="example-full-width">
-      <input type="text" matInput (keyup)="onKeyUp($event)"
-      [(ngModel)]="searchValue" name="searchValue"
+      <input type="text" matInput (keyup)="onKeyUp()"
+      [formControl]="searchValue" name="searchValue"
       placeholder="Busca un artista">
     </mat-form-field>
   </form>

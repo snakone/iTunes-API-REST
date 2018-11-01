@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 // Forms
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Animations
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,6 +43,7 @@ import { IonSearchbarComponent } from './components/search-artist/ion-searchbar/
   imports: [
     BrowserModule, BrowserAnimationsModule,
     HttpClientModule, MaterialModule, FormsModule,
+    ReactiveFormsModule,
     ToastrModule.forRoot({  // Apply to all Toastrs
       timeOut: 3000,
       progressBar: true,

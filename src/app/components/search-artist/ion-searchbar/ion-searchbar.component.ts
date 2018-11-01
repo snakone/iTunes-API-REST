@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ArtistService } from 'src/app/services/artist.service';
+import { Artist } from 'src/app/models/artist';
+
+import { FormControl } from '@angular/forms';
+
+import { debounceTime } from 'rxjs/operators';  // Debounce Function
 
 @Component({
   selector: 'ion-searchbar',
@@ -10,22 +15,23 @@ import { ArtistService } from 'src/app/services/artist.service';
 
 export class IonSearchbarComponent implements OnInit {
 
-  searchValue: string = "";
+  searchValue = new FormControl();
 
   constructor(private artistService: ArtistService) { }
 
   ngOnInit() {
   }
 
-  onKeyUp(event:Event):void {  // Trigger JS onkeyup Event
-    this.search(event);
+  onKeyUp():void {  // Trigger JS onkeyup Event
+    this.searchValue.valueChanges
+     .pipe(debounceTime(2000))  // Debounce Form Control Value Changes every 2s
+      .subscribe(value => this.search(value))
   }
 
-  search(event:Event):void {
-    event.preventDefault();
-    this.artistService.getArtistByName(this.searchValue)
+  search(value:string):void {
+    this.artistService.getArtistByName(value)
      .subscribe(res => {  // Once with the data, send it to the Observable Stream
-       this.artistService.filterData(res);
+       this.artistService.filterData(res as Artist[]);
      });
   }
 
