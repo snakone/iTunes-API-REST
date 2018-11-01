@@ -1,4 +1,4 @@
-# SlashMobility Front End Developer Junior Test
+# Front End Developer Junior Test
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
